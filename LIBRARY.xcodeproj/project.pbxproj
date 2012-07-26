@@ -12,6 +12,7 @@
 		65382990138B00F300A3571A /* UIImage-Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6538298F138B00F300A3571A /* UIImage-Rotate.m */; };
 		6538299A138B046000A3571A /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 65382999138B046000A3571A /* Application.m */; };
 		653829A7138B10E400A3571A /* WebServices-Uploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 653829A6138B10E400A3571A /* WebServices-Uploader.m */; };
+		655F91E515C2100A0078E6F8 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 655F91E415C2100A0078E6F8 /* PresidentList.plist */; };
 		659E0ABC14DA23B700C7F585 /* TEMPLATE_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E0ABA14DA23B700C7F585 /* TEMPLATE_ViewController.m */; };
 		659E0ABD14DA23B700C7F585 /* TEMPLATE_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659E0ABB14DA23B700C7F585 /* TEMPLATE_ViewController.xib */; };
 		659E0ACB14DAD70500C7F585 /* RSSXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E0ACA14DAD70500C7F585 /* RSSXMLParser.m */; };
@@ -46,6 +47,7 @@
 		65382999138B046000A3571A /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		653829A5138B10E400A3571A /* WebServices-Uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebServices-Uploader.h"; sourceTree = "<group>"; };
 		653829A6138B10E400A3571A /* WebServices-Uploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebServices-Uploader.m"; sourceTree = "<group>"; };
+		655F91E415C2100A0078E6F8 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
 		659E0AB914DA23B700C7F585 /* TEMPLATE_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPLATE_ViewController.h; sourceTree = "<group>"; };
 		659E0ABA14DA23B700C7F585 /* TEMPLATE_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPLATE_ViewController.m; sourceTree = "<group>"; };
 		659E0ABB14DA23B700C7F585 /* TEMPLATE_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMPLATE_ViewController.xib; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 			name = "File Uploader";
 			sourceTree = "<group>";
 		};
+		655F91E315C20FE00078E6F8 /* Data Files */ = {
+			isa = PBXGroup;
+			children = (
+				655F91E415C2100A0078E6F8 /* PresidentList.plist */,
+			);
+			name = "Data Files";
+			sourceTree = "<group>";
+		};
 		659E0AC814DAD6DE00C7F585 /* RSS */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,9 +198,10 @@
 			isa = PBXGroup;
 			children = (
 				65F1C6001330468500C15559 /* LIBRARY */,
+				655F91E315C20FE00078E6F8 /* Data Files */,
 				65E01D6E14DA2089006AAD4C /* Old Code/Libraries */,
 				65F1C5FF1330467100C15559 /* NIBs */,
-				65F1C5E81330465A00C15559 /* DELEGATE */,
+				65F1C5E81330465A00C15559 /* Project Files */,
 				65F1C5DF1330465A00C15559 /* Frameworks */,
 				65F1C5DD1330465A00C15559 /* Products */,
 			);
@@ -215,7 +226,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		65F1C5E81330465A00C15559 /* DELEGATE */ = {
+		65F1C5E81330465A00C15559 /* Project Files */ = {
 			isa = PBXGroup;
 			children = (
 				65F1C5F11330465A00C15559 /* LIBRARYAppDelegate.h */,
@@ -223,7 +234,7 @@
 				65F1C5F71330465A00C15559 /* LIBRARY.xcdatamodeld */,
 				65F1C5E91330465A00C15559 /* Supporting Files */,
 			);
-			name = DELEGATE;
+			name = "Project Files";
 			path = LIBRARY;
 			sourceTree = "<group>";
 		};
@@ -344,6 +355,7 @@
 				65F1C5F61330465A00C15559 /* MainWindow.xib in Resources */,
 				65E01D7314DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.xib in Resources */,
 				659E0ABD14DA23B700C7F585 /* TEMPLATE_ViewController.xib in Resources */,
+				655F91E515C2100A0078E6F8 /* PresidentList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
