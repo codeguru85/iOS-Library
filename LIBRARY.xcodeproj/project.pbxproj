@@ -13,9 +13,10 @@
 		6538299A138B046000A3571A /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 65382999138B046000A3571A /* Application.m */; };
 		653829A7138B10E400A3571A /* WebServices-Uploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 653829A6138B10E400A3571A /* WebServices-Uploader.m */; };
 		655F91E515C2100A0078E6F8 /* PresidentList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 655F91E415C2100A0078E6F8 /* PresidentList.plist */; };
+		6580420315D0CE0F005A2A32 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580420215D0CE0F005A2A32 /* Device.m */; };
+		6580420B15D0CF40005A2A32 /* RSSXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580420A15D0CF40005A2A32 /* RSSXMLParser.m */; };
 		659E0ABC14DA23B700C7F585 /* TEMPLATE_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E0ABA14DA23B700C7F585 /* TEMPLATE_ViewController.m */; };
 		659E0ABD14DA23B700C7F585 /* TEMPLATE_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659E0ABB14DA23B700C7F585 /* TEMPLATE_ViewController.xib */; };
-		659E0ACB14DAD70500C7F585 /* RSSXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E0ACA14DAD70500C7F585 /* RSSXMLParser.m */; };
 		65E01D7214DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E01D7014DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.m */; };
 		65E01D7314DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E01D7114DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.xib */; };
 		65F1C5E11330465A00C15559 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F1C5E01330465A00C15559 /* UIKit.framework */; };
@@ -48,11 +49,13 @@
 		653829A5138B10E400A3571A /* WebServices-Uploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebServices-Uploader.h"; sourceTree = "<group>"; };
 		653829A6138B10E400A3571A /* WebServices-Uploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebServices-Uploader.m"; sourceTree = "<group>"; };
 		655F91E415C2100A0078E6F8 /* PresidentList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PresidentList.plist; sourceTree = "<group>"; };
+		6580420115D0CE0F005A2A32 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		6580420215D0CE0F005A2A32 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		6580420915D0CF40005A2A32 /* RSSXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSXMLParser.h; sourceTree = "<group>"; };
+		6580420A15D0CF40005A2A32 /* RSSXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSXMLParser.m; sourceTree = "<group>"; };
 		659E0AB914DA23B700C7F585 /* TEMPLATE_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPLATE_ViewController.h; sourceTree = "<group>"; };
 		659E0ABA14DA23B700C7F585 /* TEMPLATE_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPLATE_ViewController.m; sourceTree = "<group>"; };
 		659E0ABB14DA23B700C7F585 /* TEMPLATE_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMPLATE_ViewController.xib; sourceTree = "<group>"; };
-		659E0AC914DAD70500C7F585 /* RSSXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSXMLParser.h; sourceTree = "<group>"; };
-		659E0ACA14DAD70500C7F585 /* RSSXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSXMLParser.m; sourceTree = "<group>"; };
 		65E01D6F14DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPLATE_ViewControllerTableView.h; sourceTree = "<group>"; };
 		65E01D7014DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPLATE_ViewControllerTableView.m; sourceTree = "<group>"; };
 		65E01D7114DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMPLATE_ViewControllerTableView.xib; sourceTree = "<group>"; };
@@ -164,11 +167,20 @@
 			name = "Data Files";
 			sourceTree = "<group>";
 		};
+		658041FF15D0CDEB005A2A32 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				6580420115D0CE0F005A2A32 /* Device.h */,
+				6580420215D0CE0F005A2A32 /* Device.m */,
+			);
+			name = Device;
+			sourceTree = "<group>";
+		};
 		659E0AC814DAD6DE00C7F585 /* RSS */ = {
 			isa = PBXGroup;
 			children = (
-				659E0AC914DAD70500C7F585 /* RSSXMLParser.h */,
-				659E0ACA14DAD70500C7F585 /* RSSXMLParser.m */,
+				6580420915D0CF40005A2A32 /* RSSXMLParser.h */,
+				6580420A15D0CF40005A2A32 /* RSSXMLParser.m */,
 			);
 			name = RSS;
 			sourceTree = "<group>";
@@ -261,6 +273,7 @@
 		65F1C6001330468500C15559 /* LIBRARY */ = {
 			isa = PBXGroup;
 			children = (
+				658041FF15D0CDEB005A2A32 /* Device */,
 				65E01D7414DA20FD006AAD4C /* ViewControllers */,
 				652B03CE14E06A5500E03B40 /* Class Extenders */,
 				659E0AC814DAD6DE00C7F585 /* RSS */,
@@ -381,9 +394,10 @@
 				653829A7138B10E400A3571A /* WebServices-Uploader.m in Sources */,
 				65E01D7214DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.m in Sources */,
 				659E0ABC14DA23B700C7F585 /* TEMPLATE_ViewController.m in Sources */,
-				659E0ACB14DAD70500C7F585 /* RSSXMLParser.m in Sources */,
 				652B03D314E06A9500E03B40 /* NSString+MD5.m in Sources */,
 				652B03D714E06AB300E03B40 /* UIDevice+Identifier.m in Sources */,
+				6580420315D0CE0F005A2A32 /* Device.m in Sources */,
+				6580420B15D0CF40005A2A32 /* RSSXMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
