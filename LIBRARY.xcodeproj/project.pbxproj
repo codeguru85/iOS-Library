@@ -19,6 +19,7 @@
 		659E0ABD14DA23B700C7F585 /* TEMPLATE_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659E0ABB14DA23B700C7F585 /* TEMPLATE_ViewController.xib */; };
 		65E01D7214DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E01D7014DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.m */; };
 		65E01D7314DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E01D7114DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.xib */; };
+		65E15F2A15E285AD00B4CF7F /* WebServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E15F2915E285AD00B4CF7F /* WebServices.m */; };
 		65F1C5E11330465A00C15559 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F1C5E01330465A00C15559 /* UIKit.framework */; };
 		65F1C5E31330465A00C15559 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F1C5E21330465A00C15559 /* Foundation.framework */; };
 		65F1C5E51330465A00C15559 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F1C5E41330465A00C15559 /* CoreGraphics.framework */; };
@@ -59,6 +60,8 @@
 		65E01D6F14DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPLATE_ViewControllerTableView.h; sourceTree = "<group>"; };
 		65E01D7014DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPLATE_ViewControllerTableView.m; sourceTree = "<group>"; };
 		65E01D7114DA20F2006AAD4C /* TEMPLATE_ViewControllerTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMPLATE_ViewControllerTableView.xib; sourceTree = "<group>"; };
+		65E15F2815E285AD00B4CF7F /* WebServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServices.h; sourceTree = "<group>"; };
+		65E15F2915E285AD00B4CF7F /* WebServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServices.m; sourceTree = "<group>"; };
 		65F1C5DC1330465A00C15559 /* LIBRARY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LIBRARY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F1C5E01330465A00C15559 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65F1C5E21330465A00C15559 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -206,6 +209,15 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		65E15F2215E2858900B4CF7F /* Webservices BASE */ = {
+			isa = PBXGroup;
+			children = (
+				65E15F2815E285AD00B4CF7F /* WebServices.h */,
+				65E15F2915E285AD00B4CF7F /* WebServices.m */,
+			);
+			name = "Webservices BASE";
+			sourceTree = "<group>";
+		};
 		65F1C5D11330465A00C15559 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +285,7 @@
 		65F1C6001330468500C15559 /* LIBRARY */ = {
 			isa = PBXGroup;
 			children = (
+				65E15F2215E2858900B4CF7F /* Webservices BASE */,
 				658041FF15D0CDEB005A2A32 /* Device */,
 				65E01D7414DA20FD006AAD4C /* ViewControllers */,
 				652B03CE14E06A5500E03B40 /* Class Extenders */,
@@ -398,6 +411,7 @@
 				652B03D714E06AB300E03B40 /* UIDevice+Identifier.m in Sources */,
 				6580420315D0CE0F005A2A32 /* Device.m in Sources */,
 				6580420B15D0CF40005A2A32 /* RSSXMLParser.m in Sources */,
+				65E15F2A15E285AD00B4CF7F /* WebServices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
