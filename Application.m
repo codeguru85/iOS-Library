@@ -12,39 +12,23 @@ static Application *sharedApplication = nil;
 
 @implementation Application
 
-#pragma mark -
-#pragma mark Singleton Methods
+#pragma mark - Singleton Methods
 
 + (Application *)sharedApplication {
-	if(sharedApplication == nil){
-		sharedApplication = [[super allocWithZone:NULL] init];
-	}
+    @synchronized(self){
+        if(sharedApplication == nil){
+            sharedApplication = [[self alloc] init];
+        }
+    }
 	
 	return sharedApplication;
 }
 
-+ (id)allocWithZone:(NSZone *)zone {
-	return [[self sharedApplication] retain];
+- (id)init {
+    if (self = [super init]) { }
+    return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-	return self;
-}
-
-- (id)retain {
-	return self;
-}
-
-- (unsigned)retainCount {
-	return NSUIntegerMax;
-}
-
-- (void)release {
-	//do nothing
-}
-
-- (id)autorelease {
-	return self;
-}
+- (void)dealloc { }
 
 @end
