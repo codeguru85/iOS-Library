@@ -12,6 +12,46 @@
 
 @synthesize delegate;
 
+#pragma mark - Static Block Request Handler
+
++ (void)makeRequestTo:(NSURL *)url withRequestHeaders:(NSDictionary *)requestHeaders ofMethod:(NSString*)requestMethod withData:(NSData *)data onSuccess:(void (^)(NSData *))successBlock onError:(void (^)(NSError *))errorBlock {
+    
+    if ([WebServices connectedToNetwork]) {
+        NSLog(@"Request URL: %@", url);
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+		[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+		[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+		
+        for (NSString *key in requestHeaders) {
+            [request setValue:[requestHeaders objectForKey:key] forHTTPHeaderField:key];
+        }
+        
+        [request setHTTPMethod:requestMethod];
+		
+        if (data != nil) {
+            [request setHTTPBody:data];
+        }
+        
+		[NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue currentQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+                                   if (data != nil) {
+                                       successBlock(data);
+                                       return;
+                                   }
+                                   
+                                   if (error != nil) {
+                                       errorBlock(error);
+                                       return;
+                                   }
+                               }];
+    } else {
+        errorBlock(nil);
+        return;
+    }
+}
+
 #pragma mark - Generic Request Handler
 
 - (void)makeRequestTo:(NSURL *)url withData:(NSData *)data forSuccess:(NSString *)successCallback forError:(NSString *)errorCallback {

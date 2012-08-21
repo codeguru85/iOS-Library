@@ -24,6 +24,9 @@
 
 @property (nonatomic, assign) id <WebServicesDelegate> delegate;
 
+#pragma mark - Static Block Request Handler
++ (void)makeRequestTo:(NSURL *)url withRequestHeaders:(NSDictionary *)requestHeaders ofMethod:(NSString*)requestMethod withData:(NSData *)data onSuccess:(void (^)(NSData *))successBlock onError:(void (^)(NSError *))errorBlock;
+
 #pragma mark - Generic Request Handler
 - (void)makeRequestTo:(NSURL *)url withData:(NSData *)data forSuccess:(NSString *)successCallback forError:(NSString *)errorCallback;
 
