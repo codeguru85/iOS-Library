@@ -25,10 +25,15 @@
 @property (nonatomic, assign) id <WebServicesDelegate> delegate;
 
 #pragma mark - Static Block Request Handler
-+ (void)makeRequestTo:(NSURL *)url withRequestHeaders:(NSDictionary *)requestHeaders ofMethod:(NSString*)requestMethod withData:(NSData *)data onSuccess:(void (^)(NSData *))successBlock onError:(void (^)(NSError *))errorBlock;
++ (void)makeRequestTo:(NSString *)url withRequestHeaders:(NSDictionary *)requestHeaders ofMethod:(NSString*)requestMethod withData:(NSData *)data onSuccess:(void (^)(NSData *))successBlock onError:(void (^)(NSError *))errorBlock;
 
 #pragma mark - Generic Request Handler
 - (void)makeRequestTo:(NSURL *)url withData:(NSData *)data forSuccess:(NSString *)successCallback forError:(NSString *)errorCallback;
+
+#pragma mark - Image Loading Functions
+- (void)loadImageFromURL:(NSURL *)url onSuccess:(NSString *)successCallback onError:(NSString *)errorCallback;
++ (void)loadImageFromURL:(NSString *)url onSuccess:(void (^)(NSData *))successBlock onError:(void (^)(NSError *))errorBlock;
+
 
 #pragma mark - Network Connection Methods
 + (BOOL)connectedToNetwork;

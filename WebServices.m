@@ -14,21 +14,24 @@
 
 #pragma mark - Static Block Request Handler
 
-+ (void)makeRequestTo:(NSURL *)url withRequestHeaders:(NSDictionary *)requestHeaders ofMethod:(NSString*)requestMethod withData:(NSData *)data onSuccess:(void (^)(NSData *))successBlock onError:(void (^)(NSError *))errorBlock {
++ (void)makeRequestTo:(NSString *)url withRequestHeaders:(NSDictionary *)requestHeaders ofMethod:(NSString*)requestMethod withData:(NSData *)data onSuccess:(void (^)(NSData *))successBlock onError:(void (^)(NSError *))errorBlock {
     
     if ([WebServices connectedToNetwork]) {
         NSLog(@"Request URL: %@", url);
         
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+        
+        [request setHTTPMethod:requestMethod];
+        
 		[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 		[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
 		
-        for (NSString *key in requestHeaders) {
-            [request setValue:[requestHeaders objectForKey:key] forHTTPHeaderField:key];
+        if (requestHeaders != nil) {
+            for (NSString *key in requestHeaders) {
+                [request setValue:[requestHeaders objectForKey:key] forHTTPHeaderField:key];
+            }
         }
         
-        [request setHTTPMethod:requestMethod];
-		
         if (data != nil) {
             [request setHTTPBody:data];
         }
@@ -92,6 +95,65 @@
             //[delegate performSelector:errorCallback withObject:error];
             objc_msgSend(delegate, NSSelectorFromString(errorCallback), nil);
         }
+        return;
+    }
+}
+
+- (void)loadImageFromURL:(NSURL *)url onSuccess:(NSString *)successCallback onError:(NSString *)errorCallback {
+    if ([WebServices connectedToNetwork]) {
+        NSLog(@"Request URL: %@", url);
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+		
+		[NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue currentQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+                                   if (data != nil) {
+                                       if ([delegate respondsToSelector:NSSelectorFromString(successCallback)]) {
+                                           //[delegate performSelector:successCallback withObject:data];
+                                           objc_msgSend(delegate, NSSelectorFromString(successCallback), data);
+                                       }
+                                       return;
+                                   }
+                                   
+                                   if (error != nil) {
+                                       if ([delegate respondsToSelector:NSSelectorFromString(errorCallback)]) {
+                                           //[delegate performSelector:errorCallback withObject:error];
+                                           objc_msgSend(delegate, NSSelectorFromString(errorCallback), error);
+                                       }
+                                       return;
+                                   }
+                               }];
+    } else {
+        if ([delegate respondsToSelector:NSSelectorFromString(errorCallback)]) {
+            //[delegate performSelector:errorCallback withObject:error];
+            objc_msgSend(delegate, NSSelectorFromString(errorCallback), nil);
+        }
+        return;
+    }
+}
+
++ (void)loadImageFromURL:(NSString *)url onSuccess:(void (^)(NSData *))successBlock onError:(void (^)(NSError *))errorBlock {
+    if ([WebServices connectedToNetwork]) {
+        NSLog(@"Request URL: %@", url);
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+		
+		[NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue currentQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+                                   if (data != nil) {
+                                       successBlock(data);
+                                       return;
+                                   }
+                                   
+                                   if (error != nil) {
+                                       errorBlock(error);
+                                       return;
+                                   }
+                               }];
+    } else {
+        errorBlock(nil);
         return;
     }
 }
