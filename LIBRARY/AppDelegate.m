@@ -1,14 +1,14 @@
 //
-//  LIBRARYAppDelegate.m
+//  AppDelegate.m
 //  LIBRARY
 //
 //  Created by Derek Neely on 3/15/11.
 //  Copyright 2011 derekneely.com. All rights reserved.
 //
 
-#import "LIBRARYAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation LIBRARYAppDelegate
+@implementation AppDelegate
 
 
 @synthesize window=_window;

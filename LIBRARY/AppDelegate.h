@@ -1,5 +1,5 @@
 //
-//  LIBRARYAppDelegate.h
+//  AppDelegate.h
 //  LIBRARY
 //
 //  Created by Derek Neely on 3/15/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LIBRARYAppDelegate : NSObject <UIApplicationDelegate> {
+@interface AppDelegate : NSObject <UIApplicationDelegate> {
 
 }
 
