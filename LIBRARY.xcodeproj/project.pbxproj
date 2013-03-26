@@ -17,6 +17,7 @@
 		6580420B15D0CF40005A2A32 /* RSSXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580420A15D0CF40005A2A32 /* RSSXMLParser.m */; };
 		659E0ABC14DA23B700C7F585 /* TEMPLATE_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659E0ABA14DA23B700C7F585 /* TEMPLATE_ViewController.m */; };
 		659E0ABD14DA23B700C7F585 /* TEMPLATE_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659E0ABB14DA23B700C7F585 /* TEMPLATE_ViewController.xib */; };
+		65BDB7341701CC7F003F52C8 /* NSData_Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BDB7331701CC7F003F52C8 /* NSData_Base64.m */; };
 		65D2CCAF166FD31D0015C344 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D2CCAE166FD31D0015C344 /* CoreData.m */; };
 		65D2CCB1166FD5150015C344 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D2CCB0166FD5150015C344 /* CFNetwork.framework */; };
 		65D2CCB3166FD5730015C344 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D2CCB2166FD5730015C344 /* SystemConfiguration.framework */; };
@@ -64,6 +65,8 @@
 		659E0ABA14DA23B700C7F585 /* TEMPLATE_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPLATE_ViewController.m; sourceTree = "<group>"; };
 		659E0ABB14DA23B700C7F585 /* TEMPLATE_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TEMPLATE_ViewController.xib; sourceTree = "<group>"; };
 		65B21AC9169B837D00D4C843 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		65BDB7321701CC7F003F52C8 /* NSData_Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSData_Base64.h; sourceTree = "<group>"; };
+		65BDB7331701CC7F003F52C8 /* NSData_Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSData_Base64.m; sourceTree = "<group>"; };
 		65D2CCAD166FD31D0015C344 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
 		65D2CCAE166FD31D0015C344 /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
 		65D2CCB0166FD5150015C344 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -128,6 +131,7 @@
 		652B03CE14E06A5500E03B40 /* Class Extenders */ = {
 			isa = PBXGroup;
 			children = (
+				65BDB7311701CC69003F52C8 /* NSData-Base64 */,
 				6538298C138B00D500A3571A /* UIImage-Rotate */,
 				652B03D014E06A7B00E03B40 /* NSString-MD5 */,
 				652B03D414E06A9A00E03B40 /* UIDevice-Identifier */,
@@ -205,6 +209,15 @@
 				6580420A15D0CF40005A2A32 /* RSSXMLParser.m */,
 			);
 			name = RSS;
+			sourceTree = "<group>";
+		};
+		65BDB7311701CC69003F52C8 /* NSData-Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				65BDB7321701CC7F003F52C8 /* NSData_Base64.h */,
+				65BDB7331701CC7F003F52C8 /* NSData_Base64.m */,
+			);
+			name = "NSData-Base64";
 			sourceTree = "<group>";
 		};
 		65D2CCAB166FD3110015C344 /* Core Data */ = {
@@ -458,6 +471,7 @@
 				65E15F2A15E285AD00B4CF7F /* WebServices.m in Sources */,
 				65D2CCAF166FD31D0015C344 /* CoreData.m in Sources */,
 				65E96ED416DCE17E00F77634 /* AnimationPlayViewController.m in Sources */,
+				65BDB7341701CC7F003F52C8 /* NSData_Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
